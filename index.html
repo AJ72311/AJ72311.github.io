@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Abdulhameed Yaseen | Front-End Developer</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<style type="text/css">
+			@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+			@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+			@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+			html, body {
+				width: 100%;
+				height: 100%;
+				margin: 0;
+			}
+
+			#img-container {
+				background-image: url('bg-img.jpg');
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: cover;
+				width: 100%;
+				height: 100%;
+				margin: 0;
+				text-align: left;
+			}
+
+			#name-container {
+				margin: 0;
+				margin-left: 3%;
+				color: white;
+				font-size: 5vw;
+				font-family: 'Source Sans Pro', sans-serif;
+				position: relative;
+				top: 30%;
+				transform: translateY(-30%);
+				animation-name: nameFadeIn;
+				animation-duration: 1.5s;
+			}
+
+			#cursor {
+				margin: 0;
+				color: white;
+				font-size: 5vw;
+				font-family: 'Source Sans Pro', sans-serif;
+				position: relative;
+				top: 30%;
+				transform: translateY(-30%);
+				animation-name: cursor;
+				animation-duration: 1s;
+				animation-iteration-count: 7;
+				margin-bottom: 0px;
+			}
+
+			@keyframes cursor {
+				0% {
+					border-bottom: 10px solid white;
+				}
+
+				100% {
+					border-bottom: 10px solid transparent;
+				}
+			}
+
+			#greeting {
+				margin: 0;
+				margin-left: 3%;
+				color: white;
+				font-size: 1.5vw;
+				font-family: 'Open Sans', sans-serif;
+				position: relative;
+				top: 40%;
+				transform: translateY(-40%); 
+				animation-name: greetingFadeIn;
+				animation-duration: 1.5s;
+			}
+
+			#work-scroll-button {
+				margin: 0;
+				margin-left: 3%;
+				color: white;
+				border: 1px solid white;
+				font-size: 1.5vw;
+				font-family: 'Noto Sans JP', sans-serif;
+				padding-top: 1vw;
+				padding-bottom: 1vw;
+				padding-right: 3vw;
+				padding-left: 3vw;
+				background-color: transparent;
+				background-repeat: no-repeat;
+				position: relative;
+				top: 45%;
+				transform: translateY(-45%);
+				transition: all 0.5s;
+				animation-name: buttonFadeIn;
+				animation-duration: 1.5s;
+			}
+
+			#work-scroll-button:hover {
+				background-color: white;
+				color: #4682b4;
+			}
+
+			@keyframes nameFadeIn {
+				0% {
+					opacity: 0;
+					top: 25%;
+					transform: translateY(-25%);
+				}
+
+				100% {
+					opacity: 1;
+					top: 30%;
+					transform: translateY(-30%);
+				}
+			}
+
+			@keyframes greetingFadeIn {
+				0% {
+					opacity: 0;
+					top: 35%;
+					transform: translateY(-35%);
+				}
+
+				100% {
+					opacity: 1;
+					top: 40%;
+					transform: translateY(-40%);
+				}
+			}
+
+			@keyframes buttonFadeIn {
+				0% {
+					opacity: 0;
+					top: 40%;
+					transform: translateY(-40%);
+				}
+
+				100% {
+					opacity: 1;
+					top: 45%;
+					transform: translateY(-45%);
+				}
+			}
+
+			p {
+				max-width: 70%;
+			}
+
+			#portfolio-intro {
+				width: 100%;
+				height: 40%;
+				margin: 0;
+				background-color: #282828;
+				text-align: left;
+				position: relative;
+			}
+
+			#portfolio-heading {
+				margin: 0;
+				color: white;
+				font-size: 5vw;
+				font-family: 'Source Sans Pro', sans-serif;
+				position: relative;
+				top: 15%;
+				transform: translateY(-15%);
+				margin-left: 3%;
+			}
+
+			.port-heading-animation {
+				animation-name: portHeadingAnimation;
+				animation-duration: 1.5s; 
+			}
+
+			@keyframes portHeadingAnimation {
+				0% {
+					opacity: 0;
+					top: 10%;
+					transform: translateY(-10%);
+				}
+
+				100% {
+					opacity: 1;
+					top: 15%;
+					transform: translateY(-15%);
+				}
+			}
+
+			#portfolio-description {
+				margin: 0;
+				color: white;
+				font-size: 1.5vw;
+				font-family: 'Open Sans', sans-serif;
+				position: relative;
+				top: 35%;
+				transform: translateY(-35%);
+				margin-left: 3%;
+			}
+
+			#portfolio-entries {
+				margin: 0;
+				width: 100%;
+				height: 90%;
+				background-color: #deb887;
+				text-align: left;
+				position: relative;
+			}
+
+			#portfolio-entries > h1 {
+				margin: 0;
+				color: #282828;
+				font-size: 4vw;
+				font-family: 'Source Sans Pro', sans-serif;
+				margin-left: 3%;
+				text-decoration: underline;
+				cursor: pointer;
+				position: relative;
+				top: 10%;
+				transform: translateY(-10%);
+			}
+
+			#portfolio-entries > p {
+				margin: 0;
+				color: #282828;
+				font-size: 1.5vw;
+				font-family: 'Open Sans', sans-serif;
+				margin-left: 3%;
+				position: relative;
+				top: 12.5%;
+				transform: translateY(-12.5%);
+				margin-bottom: 3%;
+			}
+
+			a {
+				color: #282828;
+			}
+
+			#contact {
+				width: 100%;
+				height: 30%;
+				margin: 0;
+				background-color: #282828;
+				text-align: left;
+				position: relative;
+			}
+
+			#contact-heading {
+				margin: 0;
+				margin-left: 3%;
+				color: white;
+				font-size: 5vw;
+				font-family: 'Source Sans Pro', sans-serif;
+				position: relative;
+				top: 10%;
+				transform: translateY(-10%);
+			}
+
+			#contact-description {
+				margin: 0;
+				margin-left: 3%;
+				color: white;
+				font-size: 1.5vw;
+				font-family: 'Open Sans', sans-serif;
+				position: relative;
+				top: 30%;
+				transform: translateY(-30%);
+			}
+
+			@media all and (max-width: 800px) {
+				#name, #portfolio-heading, #contact-heading {
+					font-size: 8vw;
+				}
+
+				#greeting {
+					font-size: 2.5vw;
+				}
+
+				#work-scroll-button {
+					font-size: 4vw;
+				}
+
+				#portfolio-entries > h1 {
+					font-size: 7vw;
+				}
+
+				#portfolio-entries > p {
+					font-size: 2.5vw;
+				}
+
+				#portfolio > p {
+					font-size: 2.5vw;
+				}
+
+				#contact > p {
+					font-size: 2.5vw;
+				}
+			}
+		</style>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script type="text/javascript">
+			var i = 0;
+			var txt = 'ABDULHAMEED YASEEN.'; /* The text */
+			var speed = 150; /* The speed/duration of the effect in milliseconds */
+
+			function typeWriter() {
+			  	if (i < txt.length) {
+			    	document.getElementById("name").innerHTML += txt.charAt(i);
+			    	i++;
+			    	setTimeout(typeWriter, speed);
+			  	}
+			}
+
+			function scrollDown() {
+			  	var vheight = $(window).height();
+			  	$('html, body').animate({
+			    	scrollTop: (Math.floor($(window).scrollTop() / vheight)+1) * vheight
+			  	}, 1000);  
+			};
+		</script>
+	</head>
+
+	<body onload="typeWriter();">
+		<div id="img-container">
+			<h1 id="name-container"><span id="name"></span><span id="cursor">&nbsp;&nbsp;&nbsp;</span></h1>
+			<p id="greeting">Hello! I am a front-end web developer specialized in assembling and maintaining elegant, interactive, and aesthetically pleasing websites.</p>
+			<button id="work-scroll-button" onclick="scrollDown();">VIEW MY WORK</button>
+		</div>
+
+		<div id="portfolio-intro">
+			<h1 id="portfolio-heading">PORTFOLIO.</h1>
+			<p id="portfolio-description">These are some example webpages that I have created. When making a page, I make sure it is both practical and beautiful, never sacrificing one for the other.</p>
+		</div>
+		<div id="portfolio-entries">
+			<h1 id="plenty-pie-heading"><a href="cafe.html">PLENTY PIE CAFE.</a></h1>
+			<p id="plenty-pie-description">This is the landing page for a fictional coffee shop: Plenty Pie Cafe. It invites the user to view the shop's lunch menu and displays pictures of the delicious pies it offers.</p>
+
+			<h1 id="solar-quiz-heading"><a href="SolarSystemQuiz.html">SOLAR SYSTEM QUIZ.</a></h1>
+			<p id="solar-quiz-description">This is an interactive quiz that tests the user's knowledge of the solar system and its planets. It contains eight questions, with each one asking about a fun fact regarding either the sun or a planet.</p>
+
+			<h1 id="tic-tac-toe-heading"><a href="TicTacToe.html">TIC TAC TOE.</a></h1>
+			<p id="tic-tac-toe-description">This page features one of the most timeless games: Tic Tac Toe. Once the game is over, the user is given the option to clear the board and start over.</p>
+		</div>
+
+		<div id="contact">
+			<h1 id="contact-heading">CONTACT.</h1>
+			<p id="contact-description">If you need to contact me, I am available at yasabd639@gmail.com. Don't hesitate to reach out!</p>
+		</div>		
+	</body>
+</html>

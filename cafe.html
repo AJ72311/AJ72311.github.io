@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Plenty Pie Cafe</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1">
+
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap');
+			@import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed&display=swap');
+			@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+			html, body {
+				height: 100%;
+				margin: 0;
+			}
+
+			#main-image-container {
+				background-image: url('main-image.jpg');
+				height: 100%;
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: cover;
+				text-align: center;
+			}
+
+			#title-text {
+				color: white;
+				font-size: 5vw;
+				position: relative;
+				top: 20%;
+				transform: translateY(-20%);
+				margin: 0;
+				font-family: 'Source Sans Pro', sans-serif;
+			}
+
+			#greeting-text {
+				color: white;
+				font-size: 2.5vw;
+				position: relative;
+				top: 25%;
+				transform: translateY(-25%);
+				margin: 0;
+				font-family: 'Source Sans Pro', sans-serif;	
+				font-weight: bold;
+			}
+
+			button {
+			    border-radius: 4px;
+			    background-color: #FF6347;
+			    border: none;
+			    color: #fff;
+			    font-size: 1.5vw;
+			    position: relative;
+			    top: 30%;
+			    transform: translateY(-30%);
+			    padding: 16px;
+			    display: inline-block;
+			    transition: all 0.5s;
+			    cursor: pointer;
+			}
+
+			button {
+			    cursor: pointer;
+			    display: inline;
+			    position: relative;
+			    transition: 0.5s;
+			}
+
+			button:hover {
+				background-color: #FF7F50;
+			}
+
+			#arrow {
+				color: white;
+				font-size: 5vw;
+				position: relative;
+				top: 40%;
+				transform: translateY(-40%);
+				font-family: 'Fira Sans Condensed', sans-serif;
+				margin: 0;
+				animation-name: bob-down;
+				animation-duration: 2s;
+				animation-iteration-count: infinite;
+				cursor: pointer;
+			}
+
+			@keyframes bob-down {
+				0% {margin-top: 2%;}
+				25% {margin-top: 4%;}
+				50% {margin-top: 6%;}
+				75% {margin-top: 4%;}
+				100% {margin-top: 2%;}
+			}
+
+			#main-content-container {
+				height: 100%;
+			}
+
+			#divider {
+				height: 20%;
+				background-color: #2F4F4F;
+				text-align: center;
+			}
+
+			#apple-pie-img-container {
+				background-image: url('apple-pie.jpg');
+				width: 30%;
+				height: 40%;
+				float: left;
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: cover;
+				text-align: center;
+				display: block;
+			}
+
+			#apple-pie-img-description {
+				height: 40%;
+				width: 70%;
+				float: right;
+				background-color: #DEB887;
+				text-align: left;
+				display: block;
+			}
+
+			#apple-pie-heading, #apple-pie-text {
+				font-family: 'Lato', sans-serif;	
+				margin-left: 5%;
+				color: #F8F8FF;
+			}
+
+			#blueberry-img-container {
+				float: right;
+				height: 40%;
+				width: 30%;
+				display: block;
+				background-image: url(blueberry-img.jpg);
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: cover;
+				text-align: center;
+			}
+
+			#blueberry-img-description {
+				float: left;
+				height: 40%;
+				width: 70%;
+				background-color: #FA8072;
+				text-align: left;
+				display: block;
+			}
+
+			#blueberry-heading, #blueberry-text {
+				font-family: 'Lato', sans-serif;	
+				margin-left: 5%;
+				color: #000;
+			}
+
+			#apple-pie-heading, #blueberry-heading {
+				margin-top: 3%;
+			}
+
+			#apple-pie-text, #blueberry-text {
+				margin-bottom: 5%;
+			}
+
+			#nav {
+				width: 100%;
+				height: 10%;
+				background-color: #2F4F4F;
+				text-align: center;
+				display: inline-block;
+				float: none;
+			}
+
+			ul {
+				list-style: none;
+				margin: 0;
+				padding-top: 1.5%;
+				cursor: pointer;
+			}
+
+			ul li {
+				display: inline;
+				padding: 0 10px;
+				border-left: solid 1px white;
+				color: white;
+				font-family: 'Lato', sans-serif;
+				text-decoration: underline;
+				margin: 0;
+			}
+
+			ul li:hover {
+				transition: color 0.15s linear;
+				color: #C0C0C0;
+			}
+
+			ul li:first-child {
+				border-left: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="main-image-container">
+			<h1 id="title-text">PLENTY PIE CAFE</h1>
+			<p id="greeting-text">Welcome!<br>We are currently serving lunch... Care to see a menu?</p>
+			<button type="button" id="menu-button">Lunch Menu</button>
+			<h1 id="arrow">&#8595</h1>
+		</div>
+		<div id="main-content-container">
+			<div id="divider"></div>
+				<div id="apple-pie-img-container"></div>
+				<div id="apple-pie-img-description">
+					<h1 id="apple-pie-heading">LOREM IPSUM DOLOR SIT AMET</h1>
+					<p id="apple-pie-text">Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Accumsan tortor posuere ac ut consequat semper viverra nam. 
+						Eu facilisis sed odio morbi quis commodo odio. Dolor magna eget est lorem. Sit amet volutpat consequat mauris nunc congue. 
+						Facilisi cras fermentum odio eu feugiat pretium nibh. Sollicitudin nibh sit amet commodo nulla facilisi. Eu facilisis sed odio morbi quis commodo. 
+						Faucibus scelerisque eleifend donec pretium vulputate sapien nec sagittis. Aliquet lectus proin nibh nisl condimentum id. In nibh mauris cursus mattis molestie a iaculis. 
+						Ultrices tincidunt arcu non sodales neque. Facilisi morbi tempus iaculis urna. Dignissim enim sit amet venenatis.</p>
+				</div>
+				<div id="blueberry-img-container"></div>
+				<div id="blueberry-img-description">
+					<h1 id="blueberry-heading">ULTRICIES MI EGET MAURIS PHARETRA ET</h1>
+					<p id="blueberry-text">Tortor posuere ac ut consequat semper viverra nam libero. Platea dictumst quisque sagittis purus sit amet. 
+						Pulvinar neque laoreet suspendisse interdum consectetur libero. Euismod nisi porta lorem mollis aliquam ut porttitor. 
+						Tellus cras adipiscing enim eu turpis. Mauris vitae ultricies leo integer malesuada. Consectetur libero id faucibus nisl tincidunt eget nullam non. 
+						Accumsan in nisl nisi scelerisque eu. Commodo ullamcorper a lacus vestibulum sed arcu non odio. Quis varius quam quisque id diam vel quam. 
+						Et tortor consequat id porta. Vitae nunc sed velit dignissim. Eget velit aliquet sagittis id. Arcu dictum varius duis at consectetur lorem donec massa. 
+						Ante in nibh mauris cursus mattis molestie a iaculis at. Posuere ac ut consequat semper viverra nam. Mauris augue neque gravida in fermentum et.</p>
+				</div>
+			<div id="nav">
+				<ul>
+					<li>Home</li>
+					<li>Contact</li>
+					<li>About Us</li>
+					<li>Feedback</li>
+					<li>Work Here</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+	<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+		<script>
+			$("#arrow").click(function() {
+				$('html, body').animate({
+					scrollTop: $("#main-content-container").offset().top},
+					'slow');
+			});
+		</script>
+		<style>
+			@media all and (max-width: 1000px) {
+				#apple-pie-img-container, #blueberry-img-container, #apple-pie-img-description, #blueberry-img-description, #nav {
+					width: 100%;
+					float: none;
+					display: inline-block;
+					height: 100%;
+					margin: -4px;
+				}
+
+				#apple-pie-img-description, #blueberry-img-description {
+					height: auto;
+				}
+
+				#title-text {
+					font-size: 6vw;
+				}
+
+				#greeting-text {
+					font-size: 4vw;
+				}
+
+				button {
+					font-size: 2.5vw;
+					padding: 1.5vw;
+				}
+
+				#nav {
+					height: 10%
+				}
+			}
+
+			@media all and (max-width: 550px) {
+				#title-text {
+					font-size: 7vw;
+				} 
+
+				#greeting-text {
+					font-size: 5vw;
+				}
+
+				button {
+					font-size: 3.5vw;
+					padding: 2.5vw;
+				}
+
+				#arrow {
+					display: none;
+				}
+			}
+
+			@media all and (min-width: 750px) {
+				button {
+				    cursor: pointer;
+				    display: inline;
+				    position: relative;
+				    transition: 0.5s;
+				}
+
+				button:after {
+				    content: '»';
+				    position: absolute;
+				    opacity: 0;  
+				    top: 16px;
+				    right: -20px;
+				    transition: 0.5s;
+				}
+
+				button:hover {
+				    padding-right: 24px;
+				    padding-left: 8px;
+					background-color: #FF7F50;
+				}
+
+				button:hover:after {
+				    opacity: 1;
+				    right: 10px;
+				}
+			}
+		</style>
+</html>

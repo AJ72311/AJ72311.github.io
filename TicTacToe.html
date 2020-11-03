@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Tic Tac Toe</title>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+
+    <style>
+      body {
+        background-color: #6EE3FA;
+        text-align: center;
+      }
+
+      #winner {
+        font-family: 'PT Sans', sans-serif;
+        color: white;
+      }
+
+      #restart {
+        border: none;
+        padding: 20px;
+        visibility: hidden;
+        background-color: white;
+        color: #6EE3FA;
+        font-weight: bold;
+        font-size: 25px;
+      }
+
+      #chart {
+        color: white;
+      }
+
+      table {
+        margin-top: 10%;
+        margin-left: auto;
+        margin-right: auto;
+        animation-name: fadeIn;
+        animation-duration: 1s;
+      }
+
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+          margin-top: 8%;
+        }
+
+        100% {
+          opacity: 1;
+          margin-top: 10%;
+        }
+      }
+
+      .cell {
+        text-align: center;
+        font-color: white;
+        font-size: 35px;
+        width: 75px;
+        height: 75px;
+        border: none;
+        font-family: 'PT Sans', sans-serif;
+        background-color: #6EE3FA;
+        font-weight: bold;
+      }
+
+      .row1, .row2 {
+        border-bottom: solid white 5px;
+      }
+
+      .column1 {
+        border-right: 5px solid white;
+      }
+
+      .column2 {
+        border-left: 5px solid white;
+      }
+    </style>
+
+    <script type="text/javascript">
+      var counter = 0;
+
+      function checkWinner() {
+        var tL = document.getElementById("top-left").innerHTML;
+        var tM = document.getElementById("top-mid").innerHTML;
+        var tR = document.getElementById("top-right").innerHTML;
+        var mL = document.getElementById("mid-left").innerHTML;
+        var mM = document.getElementById("mid-mid").innerHTML;
+        var mR = document.getElementById("mid-right").innerHTML;
+        var bL = document.getElementById("bottom-left").innerHTML;
+        var bM = document.getElementById("bottom-mid").innerHTML;
+        var bR = document.getElementById("bottom-right").innerHTML;
+        
+        values = [tL, tM, tR, mL, mM, mR, bL, bM, bR];
+        
+        /*
+          COMBINATIONS:
+          tL - tM - tR *
+          tL - mL - bL *
+          tL - mM - bR *
+          tM - mM - bM *
+          tR - mR - bR *
+          tR - mM - bL *
+          mL - mM - mR *
+          bL - bM - bR *
+        */
+        
+        if ((tL == "X" && tM == "X" && tR == "X")) {
+          document.getElementById("winner").innerHTML = "X WINS!";
+          return;
+        } else if ((tL == "O" && tM == "O" && tR == "O")) {
+          document.getElementById("winner").innerHTML = "O WINS!";
+          return;
+        } else if ((tL == "X" && mL == "X" && bL == "X")) {
+          document.getElementById("winner").innerHTML = "X WINS!";
+          return;
+        } else if ((tL == "O" && mL == "O" && bL == "O")) {
+          document.getElementById("winner").innerHTML = "O WINS!";
+          return;
+        } else if ((tL == "X" && mM == "X" && bR == "X")) {
+          document.getElementById("winner").innerHTML = "X WINS!"
+          return;
+        } else if ((tL == "O" && mM == "O" && bR == "O")) {
+          document.getElementById("winner").innerHTML = "O WINS!";
+          return;
+        } else if ((tM == "X" && mM == "X" && bM == "X")) {
+          document.getElementById("winner").innerHTML = "X WINS!"
+          return;
+        } else if ((tM == "O" && mM == "O" && bM == "O")) {
+          document.getElementById("winner").innerHTML = "O WINS!";
+          return;
+        } else if ((tR == "X" && mR == "X" && bR == "X")) {
+          document.getElementById("winner").innerHTML = "X WINS!"
+          return;
+        } else if ((tR == "O" && mR == "O" && bR == "O")) {
+          document.getElementById("winner").innerHTML = "O WINS!";
+          return;
+        } else if ((tR == "X" && mM == "X" && bL == "X")) {
+          document.getElementById("winner").innerHTML = "X WINS!"
+          return;
+        } else if ((tR == "O" && mM == "O" && bL == "O")) {
+          document.getElementById("winner").innerHTML = "O WINS!";
+          return;
+        } else if ((mL == "X" && mM == "X" && mR == "X")) {
+          document.getElementById("winner").innerHTML = "X WINS!"
+          return;
+        } else if ((mL == "O" && mM == "O" && mR == "O")) {
+          document.getElementById("winner").innerHTML = "O WINS!";
+          return;
+        } else if ((bL == "X" && bM == "X" && bR == "X")) {
+          document.getElementById("winner").innerHTML = "X WINS!"
+          return;
+        } else if ((bL == "O" && bM == "O" && bR == "O")) {
+          document.getElementById("winner").innerHTML = "O WINS!";
+          return;
+        } else {
+          for (var i = 0; i < values.length; i++) {
+            if (values[i] == "") {
+              return;
+            } else {
+              continue;
+            }
+          }
+          document.getElementById("winner").innerHTML = "DRAW";
+          return;
+        }
+      }
+
+      function toggleRestart() {
+        var isOver = document.getElementById("winner").innerHTML;
+        if (isOver != "") {
+          document.getElementById("restart").style.visibility = "visible";
+          document.getElementById("restart").style.margin = "0 auto";
+        } else {
+          return;
+        }
+      }
+
+      function refresh() {
+        location.reload(true);
+      }
+
+      function topLeft() {
+        var value = document.getElementById("top-left").innerHTML;
+        if (value == "X" || value == "O") {
+            return;
+            }  
+
+        counter += 1
+        if (counter % 2 == 0) {
+          document.getElementById("top-left").innerHTML = "O";
+        } else {
+          document.getElementById("top-left").innerHTML = "X";
+        }
+      } 
+
+      function topMid() {
+        var value = document.getElementById("top-mid").innerHTML;
+        if (value == "X" || value == "O") {
+            return;
+            }  
+        
+        counter += 1
+        if (counter % 2 == 0) {
+          document.getElementById("top-mid").innerHTML = "O";
+        } else {
+          document.getElementById("top-mid").innerHTML = "X";
+        }
+      }
+
+      function topRight() {
+        var value = document.getElementById("top-right").innerHTML;
+        if (value == "X" || value == "O") {
+            return;
+            }  
+        
+        counter += 1
+        if (counter % 2 == 0) {
+          document.getElementById("top-right").innerHTML = "O";
+        } else {
+          document.getElementById("top-right").innerHTML = "X";
+        }
+      }
+
+      function midLeft() {
+        var value = document.getElementById("mid-left").innerHTML;
+        if (value == "X" || value == "O") {
+            return;
+            }  
+        
+        counter += 1
+        if (counter % 2 == 0) {
+          document.getElementById("mid-left").innerHTML = "O";
+        } else {
+          document.getElementById("mid-left").innerHTML = "X";
+        }
+      }
+
+      function midMid() {
+        var value = document.getElementById("mid-mid").innerHTML;
+        if (value == "X" || value == "O") {
+            return;
+            }  
+        
+        counter += 1
+        if (counter % 2 == 0) {
+          document.getElementById("mid-mid").innerHTML = "O";
+        } else {
+          document.getElementById("mid-mid").innerHTML = "X";
+        }
+      }
+
+      function midRight() {
+        var value = document.getElementById("mid-right").innerHTML;
+        if (value == "X" || value == "O") {
+            return;
+            }  
+        
+        counter += 1
+        if (counter % 2 == 0) {
+          document.getElementById("mid-right").innerHTML = "O";
+        } else {
+          document.getElementById("mid-right").innerHTML = "X";
+        }
+      }
+
+      function bottomLeft() {
+        var value = document.getElementById("bottom-left").innerHTML;
+        if (value == "X" || value == "O") {
+            return;
+            }  
+        
+        counter += 1
+        if (counter % 2 == 0) {
+          document.getElementById("bottom-left").innerHTML = "O";
+        } else {
+          document.getElementById("bottom-left").innerHTML = "X";
+        }
+      }
+
+      function bottomMid() {
+        var value = document.getElementById("bottom-mid").innerHTML;
+        if (value == "X" || value == "O") {
+            return;
+            }  
+        
+        counter += 1
+        if (counter % 2 == 0) {
+          document.getElementById("bottom-mid").innerHTML = "O";
+        } else {
+          document.getElementById("bottom-mid").innerHTML = "X";
+        }
+      }
+
+      function bottomRight() {
+        var value = document.getElementById("bottom-right").innerHTML;
+        if (value == "X" || value == "O") {
+            return;
+            }  
+        
+        counter += 1
+        if (counter % 2 == 0) {
+          document.getElementById("bottom-right").innerHTML = "O";
+        } else {
+          document.getElementById("bottom-right").innerHTML = "X";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h1 id="winner" style="text-align:center;"></h1>
+    <button id="restart" onclick="refresh()">RESTART</button>
+    <table class="center" id="chart">
+      <tr>
+        <td onclick="topLeft(); checkWinner(); toggleRestart()" class="cell row1 column1" id="top-left"></td>
+        <td onclick="topMid(); checkWinner(); toggleRestart()" class="cell row1" id="top-mid"></td>
+        <td onclick="topRight(); checkWinner(); toggleRestart()" class="cell row1 column2" id="top-right"></td>
+      </tr>
+      <tr>
+        <td onclick="midLeft(); checkWinner(); toggleRestart()" id="mid-left" class="cell row2 column1"></td>
+        <td onclick="midMid(); checkWinner(); toggleRestart()" id="mid-mid" class="cell row2"></td>
+        <td onclick="midRight(); checkWinner(); toggleRestart()" id="mid-right" class="cell row2 column2"></td>
+      </tr>
+      <tr>
+        <td onclick="bottomLeft(); checkWinner(); toggleRestart()" id="bottom-left" class="cell column1"></td>
+        <td onclick="bottomMid(); checkWinner(); toggleRestart()" id="bottom-mid" class="cell"></td>
+        <td onclick="bottomRight(); checkWinner(); toggleRestart()" id="bottom-right" class="cell column2"></td>
+      </tr>
+    </table>
+  </body>
+</html>

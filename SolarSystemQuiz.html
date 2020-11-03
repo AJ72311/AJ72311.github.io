@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<title>Solar System Quiz</title>
+
+		<style type="text/css">
+			@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400&display=swap');
+			@import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed&display=swap');
+
+			html, body {
+				width: 100%;
+				height: 100%;
+				margin: 0;
+			}
+
+			#main {
+				background-image: url('universe.jpg');
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: cover;
+				width: 100%;
+				height: 100%;
+				text-align: center;
+				margin: 0;
+			}
+
+			#greeting {
+				font-size: 5vw;
+				color: white;
+				margin: 0;
+				position: relative;
+				top: 45%;
+				transform: translateY(-45%);
+				font-family: 'Roboto Condensed', sans-serif;
+				animation-name: greetingMoveUp;
+				animation-duration: 1s;
+			}
+
+			#score-header {
+				display: none;
+				font-size: 5vw;
+				color: white;
+				margin: 0;
+				position: relative;
+				top: 50%;
+				transform: translateY(-50%);
+				font-family: 'Roboto Condensed', sans-serif;
+			}
+
+			#start-button {
+				font-size: 3.5vw;
+				font-family: 'Roboto Condensed', sans-serif;
+				color: white;
+				margin: 0;
+				position: relative;
+				top: 50%;
+				transform: translateY(-50%);
+				padding: 16px;
+				display: inline-block;
+				background-color: #008080;
+				border: none;
+				animation-name: buttonMoveUp;
+				animation-duration: 1s;
+			}
+
+			@keyframes greetingMoveUp {
+				0% {
+					top: 40%;
+					transform: translateY(-40%);
+				}
+
+				100% {
+					top: 45%;
+					transform: translateY(-45%);
+				}
+			}
+
+			@keyframes buttonMoveUp {
+				0% {
+					top: 45%;
+					transform: translateY(-45%);
+				}
+
+				100% {
+					top: 50%;
+					transform: translateY(-50%);
+				}
+			}
+
+			#checkmark, #ballot-x {
+				font-size: 6vw;
+				font-family: 'Fira Sans Condensed', sans-serif;
+				margin: 0;
+				position: relative;
+				top: 50%;
+				transform: translateY(-50%);
+				color: #7cfc00;
+				display: none;
+			}
+
+			#ballot-x {
+				color: #dc143c;
+			}
+
+			#q1, #q2, #q3, #q4, #q5, #q6, #q7, #q8 {
+				display: none;
+				position: relative;
+				top: 50%;
+				transform: translateY(-50%);
+				font-family: 'Roboto Condensed', sans-serif;
+				color: white;
+				margin: 0;
+				text-align: left; 
+			}
+
+			.animation-class {
+				animation-name: questionMoveUp;
+				animation-duration: 1s;
+			}
+
+			@keyframes questionMoveUp {
+				0% {
+					top: 45%;
+					transform: translateY(-45%);
+				}
+
+				100% {
+					top: 50%;
+					transform: translateY(-50%);
+				}
+			}
+
+			h1, h2 {
+				margin: 0;
+				margin-left: 5%;
+			}
+
+			h1 {
+				font-size: 4vw;
+				margin-bottom: 2%;
+			}
+
+			h2 {
+				font-size: 2.5vw;
+				margin-bottom: 1%;
+				color: #87cefa;
+				transition: all 0.5s;
+				cursor: default;
+			}
+
+			h2:hover {
+				color: #008080;
+			}
+
+			span {
+				color: #87cefa;
+			}
+
+			@media all and (max-width: 750px) {
+				h1 {
+					font-size: 6vw;
+				}
+
+				h2 {
+					font-size: 4.5vw;
+				}
+
+				#checkmark, #ballot-x {
+					font-size: 8vw;
+				}
+
+				#greeting {
+					font-size: 7vw;
+				}
+
+				#start-button {
+					font-size: 5.5vw;
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="main">
+			<h1 id="greeting">WELCOME TO THE SOLAR SYSTEM QUIZ</h1>
+			<button id="start-button" onclick="startGame();">START</button>
+
+			<h1 id="checkmark">&#10004;</h1>
+			<h1 id="ballot-x">&#10006;</h1>
+
+			<h1 id="score-header">YOU GOT <span id="score"></span>/8 QUESTIONS CORRECT!</h1>
+
+			<div id="q1">
+				<h1>WHAT IS THE <span>BIGGEST</span> PLANET IN THE SOLAR SYSTEM?</h1>
+				<h2 onclick="question1('saturn');">SATURN</h2>
+				<h2 onclick="question1('sun');">THE SUN</h2>
+				<h2 onclick="question1('jupiter');">JUPITER</h2>
+				<h2 onclick="question1('neptune');">NEPTUNE</h2>
+			</div>
+
+			<div id="q2">
+				<h1>WHAT IS THE <span>CLOSEST</span> PLANET TO THE SUN?</h1>
+				<h2 onclick="question2('earth');">EARTH</h2>
+				<h2 onclick="question2('venus');">VENUS</h2>
+				<h2 onclick="question2('mercury');">MERCURY</h2>
+				<h2 onclick="question2('mars');">MARS</h2>
+			</div>
+
+			<div id="q3">
+				<h1>WHICH PLANET HAS THE <span>TALLEST</span> MOUNTAIN IN THE SOLAR SYSTEM?</h1>
+				<h2 onclick="question3('mars');">MARS</h2>
+				<h2 onclick="question3('pluto');">PLUTO</h2>
+				<h2 onclick="question3('jupiter');">JUPITER</h2>
+				<h2 onclick="question3('sun');">THE SUN</h2>
+			</div>
+
+			<div id="q4">
+				<h1>WHAT PLANET HAS THE <span>HIGHEST</span> AVERAGE TEMPERATURE?</h1>
+				<h2 onclick="question4('venus');">VENUS</h2>
+				<h2 onclick="question4('mercury');">MERCURY</h2>
+				<h2 onclick="question4('mars');">MARS</h2>
+				<h2 onclick="question4('uranus');">URANUS</h2>
+			</div>
+
+			<div id="q5">
+				<h1>IF THE EARTH WAS THE SIZE OF A <span>SESAME SEED</span>, THEN THE SUN WOULD BE THE SIZE OF A...</h1>
+				<h2 onclick="question5('grape');">GRAPE</h2>
+				<h2 onclick="question5('tennis');">TENNIS BALL</h2>
+				<h2 onclick="question5('grapefruit');">GRAPEFRUIT</h2>
+				<h2 onclick="question5('basketball');">BASKETBALL</h2>
+			</div>
+
+			<div id="q6">
+				<h1>WHICH PLANET HAS THE MOST <span>MOONS</span>?</h1>
+				<h2 onclick="question6('jupiter');">JUPITER</h2>
+				<h2 onclick="question6('saturn');">SATURN</h2>
+				<h2 onclick="question6('uranus');">URANUS</h2>
+				<h2 onclick="question6('mars');">MARS</h2>
+			</div>
+
+			<div id="q7">
+				<h1>WHICH PLANET HAS THE STRONGEST <span>WINDS</span>?</h1>
+				<h2 onclick="question7('jupiter');">JUPITER</h2>
+				<h2 onclick="question7('earth');">EARTH</h2>
+				<h2 onclick="question7('neptune');">NEPTUNE</h2>
+				<h2 onclick="question7('mars');">MARS</h2>
+			</div>
+
+			<div id="q8">
+				<h1>THE TEMPERATURE AT THE <span>CENTER</span> OF THE SUN CAN REACH...?</h1>
+				<h2 onclick="question8('5000');">5,000 degrees Celsius</h2>
+				<h2 onclick="question8('500000');">500,000 degrees Celsius</h2>
+				<h2 onclick="question8('15mill');">15 million degrees Celsius</h2>
+				<h2 onclick="question8('500mill');">500 million degrees Celsius</h2>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+			$('#greeting').hide().fadeIn(1000);
+			$('#start-button').hide().fadeIn(1000);
+
+			function startGame() {
+				document.getElementById('greeting').style.display = 'none';
+				document.getElementById('start-button').style.display = 'none';
+				$('#q1').fadeIn(1000);
+				$('#q1').addClass('animation-class');
+			}
+
+			var points = 0;
+
+			function question1(answer) {
+				document.getElementById('q1').style.display = 'none';
+
+				if (answer == 'jupiter') {
+					points += 1;
+
+					$('#checkmark').fadeIn(500);
+					$('#checkmark').fadeOut(500);
+				} else {
+					$('#ballot-x').fadeIn(500);
+					$('#ballot-x').fadeOut(500);
+				}
+
+				setTimeout(function() {
+					$('#q2').fadeIn();
+					$('#q2').addClass('animation-class');
+				}, 1000);
+			}
+
+			function question2(answer) {
+				document.getElementById('q2').style.display = 'none';
+
+				if (answer == 'mercury') {
+					points += 1;
+					
+					$('#checkmark').fadeIn(500);
+					$('#checkmark').fadeOut(500);
+				} else {
+					$('#ballot-x').fadeIn(500);
+					$('#ballot-x').fadeOut(500);
+				}
+
+				setTimeout(function() {
+					$('#q3').fadeIn();
+					$('#q3').addClass('animation-class');
+				}, 1000);
+			}
+
+			function question3(answer) {
+				document.getElementById('q3').style.display = 'none';
+
+				if (answer == 'mars') {
+					points += 1;
+				
+					$('#checkmark').fadeIn(500);
+					$('#checkmark').fadeOut(500);
+				} else {
+					$('#ballot-x').fadeIn(500);
+					$('#ballot-x').fadeOut(500);
+				}
+
+				setTimeout(function() {
+					$('#q4').fadeIn();
+					$('#q4').addClass('animation-class');
+				}, 1000);
+			}
+
+			function question4(answer) {
+				document.getElementById('q4').style.display = 'none';
+
+				if (answer == 'venus') {
+					points += 1;
+				
+					$('#checkmark').fadeIn(500);
+					$('#checkmark').fadeOut(500);
+				} else {
+					$('#ballot-x').fadeIn(500);
+					$('#ballot-x').fadeOut(500);
+				}
+
+				setTimeout(function() {
+					$('#q5').fadeIn();
+					$('#q5').addClass('animation-class');
+				}, 1000);
+			}
+
+			function question5(answer) {
+				document.getElementById('q5').style.display = 'none';
+
+				if (answer == 'basketball') {
+					points += 1;
+				
+					$('#checkmark').fadeIn(500);
+					$('#checkmark').fadeOut(500);
+				} else {
+					$('#ballot-x').fadeIn(500);
+					$('#ballot-x').fadeOut(500);
+				}
+
+				setTimeout(function() {
+					$('#q6').fadeIn();
+					$('#q6').addClass('animation-class');
+				}, 1000);
+			}
+
+			function question6(answer) {
+				document.getElementById('q6').style.display = 'none';
+
+				if (answer == 'saturn') {
+					points += 1;
+				
+					$('#checkmark').fadeIn(500);
+					$('#checkmark').fadeOut(500);
+				} else {
+					$('#ballot-x').fadeIn(500);
+					$('#ballot-x').fadeOut(500);
+				}
+
+				setTimeout(function() {
+					$('#q7').fadeIn();
+					$('#q7').addClass('animation-class');
+				}, 1000);
+			}
+
+			function question7(answer) {
+				document.getElementById('q7').style.display = 'none';
+
+				if (answer == 'neptune') {
+					points += 1;
+				
+					$('#checkmark').fadeIn(500);
+					$('#checkmark').fadeOut(500);
+				} else {
+					$('#ballot-x').fadeIn(500);
+					$('#ballot-x').fadeOut(500);
+				}
+
+				setTimeout(function() {
+					$('#q8').fadeIn();
+					$('#q8').addClass('animation-class');
+				}, 1000);
+			}
+
+			function question8(answer) {
+				document.getElementById('q8').style.display = 'none';
+
+				if (answer == '15mill') {
+					points += 1;
+				
+					$('#checkmark').fadeIn(500);
+					$('#checkmark').fadeOut(500);
+				} else {
+					$('#ballot-x').fadeIn(500);
+					$('#ballot-x').fadeOut(500);
+				}
+
+				setTimeout(function() {
+					document.getElementById('score').innerHTML = points;
+					$('#score-header').fadeIn();
+					$('#score-header').addClass('animation-class');
+				}, 1000);
+			}
+		</script>
+</html>
