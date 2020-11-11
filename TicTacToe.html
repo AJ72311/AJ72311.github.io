@@ -7,6 +7,12 @@
     <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
 
     <style>
+      html, body {
+        height: 90%;
+        width: 100%;
+        margin: 0;
+      }
+
       body {
         background-color: #6EE3FA;
         text-align: center;
@@ -32,9 +38,11 @@
       }
 
       table {
-        margin-top: 10%;
-        margin-left: auto;
-        margin-right: auto;
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin: 0;
         animation-name: fadeIn;
         animation-duration: 1s;
       }
@@ -42,12 +50,16 @@
       @keyframes fadeIn {
         0% {
           opacity: 0;
-          margin-top: 8%;
+          top: 40%;
+          left: 50%;
+          transform: translate(-50%, -40%);
         }
 
         100% {
           opacity: 1;
-          margin-top: 10%;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
         }
       }
 

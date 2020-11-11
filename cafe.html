@@ -4,7 +4,6 @@
 	<head>
 		<title>Plenty Pie Cafe</title>
 		<meta charset="UTF-8">
-		<meta name="viewport" content="initial-scale=1">
 
 		<style>
 			@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap');
@@ -27,21 +26,29 @@
 
 			#title-text {
 				color: white;
-				font-size: 5vw;
+				font-size: 60px;
 				position: relative;
-				top: 20%;
-				transform: translateY(-20%);
+				top: 15%;
+				transform: translateY(-15%);
+				-ms-transform: translateY(-15%);
+				-webkit-transform: translateY(-15%);
+				-moz-transform: translateY(-15%);
+				-o-transform: translateY(-15%);
 				margin: 0;
 				font-family: 'Source Sans Pro', sans-serif;
 			}
 
 			#greeting-text {
 				color: white;
-				font-size: 2.5vw;
+				font-size: 35px;
+				margin: 0;
 				position: relative;
 				top: 25%;
 				transform: translateY(-25%);
-				margin: 0;
+				-ms-transform: translateY(-25%);
+				-webkit-transform: translateY(-25%);
+				-moz-transform: translateY(-25%);
+				-o-transform: translateY(-25%);
 				font-family: 'Source Sans Pro', sans-serif;	
 				font-weight: bold;
 			}
@@ -51,35 +58,59 @@
 			    background-color: #FF6347;
 			    border: none;
 			    color: #fff;
-			    font-size: 1.5vw;
-			    position: relative;
-			    top: 30%;
-			    transform: translateY(-30%);
+			    font-size: 24px;
 			    padding: 16px;
-			    display: inline-block;
+			    width: 180px;
 			    transition: all 0.5s;
 			    cursor: pointer;
+			    position: relative;
+				top: 35%;
+				transform: translateY(-35%);
+				-ms-transform: translateY(-35%);
+				-webkit-transform: translateY(-35%);
+				-moz-transform: translateY(-35%);
+				-o-transform: translateY(-35%);
 			}
 
 			button {
 			    cursor: pointer;
-			    display: inline;
+			    display: inline-block;
 			    position: relative;
 			    transition: 0.5s;
 			}
 
+			button:after {
+			    content: '»';
+			    position: absolute;
+			    opacity: 0;  
+			    top: 16px;
+			    right: -20px;
+			    transition: 0.5s;
+			}
+
 			button:hover {
+			    padding-right: 24px;
+			    padding-left: 8px;
 				background-color: #FF7F50;
+			}
+
+			button:hover:after {
+			    opacity: 1;
+			    right: 10px;
 			}
 
 			#arrow {
 				color: white;
-				font-size: 5vw;
-				position: relative;
-				top: 40%;
-				transform: translateY(-40%);
+				font-size: 70px;
 				font-family: 'Fira Sans Condensed', sans-serif;
 				margin: 0;
+				position: relative;
+				top: 45%;
+				transform: translateY(-45%);
+				-ms-transform: translateY(-45%);
+				-webkit-transform: translateY(-45%);
+				-moz-transform: translateY(-45%);
+				-o-transform: translateY(-45%);
 				animation-name: bob-down;
 				animation-duration: 2s;
 				animation-iteration-count: infinite;
@@ -159,11 +190,7 @@
 			}
 
 			#apple-pie-heading, #blueberry-heading {
-				margin-top: 3%;
-			}
-
-			#apple-pie-text, #blueberry-text {
-				margin-bottom: 5%;
+				margin-top: 5%;
 			}
 
 			#nav {
@@ -214,7 +241,7 @@
 				<div id="apple-pie-img-container"></div>
 				<div id="apple-pie-img-description">
 					<h1 id="apple-pie-heading">LOREM IPSUM DOLOR SIT AMET</h1>
-					<p id="apple-pie-text">Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Accumsan tortor posuere ac ut consequat semper viverra nam. 
+					<p id="apple-pie-text">consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Accumsan tortor posuere ac ut consequat semper viverra nam. 
 						Eu facilisis sed odio morbi quis commodo odio. Dolor magna eget est lorem. Sit amet volutpat consequat mauris nunc congue. 
 						Facilisi cras fermentum odio eu feugiat pretium nibh. Sollicitudin nibh sit amet commodo nulla facilisi. Eu facilisis sed odio morbi quis commodo. 
 						Faucibus scelerisque eleifend donec pretium vulputate sapien nec sagittis. Aliquet lectus proin nibh nisl condimentum id. In nibh mauris cursus mattis molestie a iaculis. 
@@ -250,7 +277,15 @@
 			});
 		</script>
 		<style>
-			@media all and (max-width: 1000px) {
+			@media all and (max-width: 800px) {
+				#title-text {
+					font-size: 12vw;
+				}
+
+				#greeting-text {
+					font-size: 8vw;
+				}
+
 				#apple-pie-img-container, #blueberry-img-container, #apple-pie-img-description, #blueberry-img-description, #nav {
 					width: 100%;
 					float: none;
@@ -259,73 +294,20 @@
 					margin: -4px;
 				}
 
-				#apple-pie-img-description, #blueberry-img-description {
-					height: auto;
-				}
-
-				#title-text {
-					font-size: 6vw;
-				}
-
-				#greeting-text {
+				button {
 					font-size: 4vw;
-				}
-
-				button {
-					font-size: 2.5vw;
-					padding: 1.5vw;
-				}
-
-				#nav {
-					height: 10%
-				}
-			}
-
-			@media all and (max-width: 550px) {
-				#title-text {
-					font-size: 7vw;
-				} 
-
-				#greeting-text {
-					font-size: 5vw;
-				}
-
-				button {
-					font-size: 3.5vw;
-					padding: 2.5vw;
 				}
 
 				#arrow {
 					display: none;
 				}
-			}
 
-			@media all and (min-width: 750px) {
-				button {
-				    cursor: pointer;
-				    display: inline;
-				    position: relative;
-				    transition: 0.5s;
+				#apple-pie-img-description, #blueberry-img-description {
+					height: auto;
 				}
 
-				button:after {
-				    content: '»';
-				    position: absolute;
-				    opacity: 0;  
-				    top: 16px;
-				    right: -20px;
-				    transition: 0.5s;
-				}
-
-				button:hover {
-				    padding-right: 24px;
-				    padding-left: 8px;
-					background-color: #FF7F50;
-				}
-
-				button:hover:after {
-				    opacity: 1;
-				    right: 10px;
+				#nav {
+					height: 10%
 				}
 			}
 		</style>
