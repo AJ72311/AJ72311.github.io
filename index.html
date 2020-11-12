@@ -104,14 +104,12 @@
 				background-color: transparent;
 				background-repeat: no-repeat;
 				position: relative;
-				top: 42.5%;
-				transform: translateY(-42.5%);
-				-ms-transform: translateY(-42.5%);
-				-webkit-transform: translateY(-42.5%);
-				-moz-transform: translateY(-42.5%);
-				-o-transform: translateY(-42.5%);
-				display: inline;
-				cursor: default;
+				top: 45%;
+				transform: translateY(-45%);
+				-ms-transform: translateY(-45%);
+				-webkit-transform: translateY(-45%);
+				-moz-transform: translateY(-45%);
+				-o-transform: translateY(-45%);
 				transition: all 0.5s;
 				animation-name: buttonFadeIn;
 				animation-duration: 1.5s;
@@ -169,22 +167,22 @@
 			@keyframes buttonFadeIn {
 				0% {
 					opacity: 0;
-					top: 37.5%;
-					transform: translateY(-37.5%);
-					-ms-transform: translateY(-37.5%);
-					-webkit-transform: translateY(-37.5%);
-					-moz-transform: translateY(-37.5%);
-					-o-transform: translateY(-37.5%);
+					top: 40%;
+					transform: translateY(-40%);
+					-ms-transform: translateY(-40%);
+					-webkit-transform: translateY(-40%);
+					-moz-transform: translateY(-40%);
+					-o-transform: translateY(-40%);
 				}
 
 				100% {
 					opacity: 1;
-					top: 42.5%;
-					transform: translateY(-42.5%);
-					-ms-transform: translateY(-42.5%);
-					-webkit-transform: translateY(-42.5%);
-					-moz-transform: translateY(-42.5%);
-					-o-transform: translateY(-42.5%);
+					top: 45%;
+					transform: translateY(-45%);
+					-ms-transform: translateY(-45%);
+					-webkit-transform: translateY(-45%);
+					-moz-transform: translateY(-45%);
+					-o-transform: translateY(-45%);
 				}
 			}
 
@@ -193,119 +191,183 @@
 			}
 
 			#portfolio-intro {
+				width: 100%;
+				height: 40%;
+				margin: 0;
 				background-color: #282828;
-				overflow: auto;
+				text-align: left;
+				position: relative;
 			}
 
-			#portfolio-intro > h1 {
-				color: white;
+			#portfolio-heading {
 				margin: 0;
-				margin-left: 3%;
-				margin-top: 3%;
-				margin-bottom: 3%;
+				color: white;
 				font-size: 5vw;
 				font-family: 'Source Sans Pro', sans-serif;
-			} 
-
-			#portfolio-intro > p {
-				color: white;
-				margin: 0;
+				position: relative;
+				top: 15%;
+				transform: translateY(-15%);
+				-ms-transform: translateY(-15%);
+				-webkit-transform: translateY(-15%);
+				-moz-transform: translateY(-15%);
+				-o-transform: translateY(-15%);
 				margin-left: 3%;
-				margin-bottom: 3%;
+			}
+
+			.port-heading-animation {
+				animation-name: portHeadingAnimation;
+				animation-duration: 1.5s; 
+			}
+
+			@keyframes portHeadingAnimation {
+				0% {
+					opacity: 0;
+					top: 10%;
+					transform: translateY(-10%);
+					-ms-transform: translateY(-10%);
+					-webkit-transform: translateY(-10%);
+					-moz-transform: translateY(-10%);
+					-o-transform: translateY(-10%);
+				}
+
+				100% {
+					opacity: 1;
+					top: 15%;
+					transform: translateY(-15%);
+					-ms-transform: translateY(-15%);
+					-webkit-transform: translateY(-15%);
+					-moz-transform: translateY(-15%);
+					-o-transform: translateY(-15%);
+				}
+			}
+
+			#portfolio-description {
+				margin: 0;
+				color: white;
 				font-size: 1.5vw;
 				font-family: 'Open Sans', sans-serif;
-			}
-
-			#portfolio {
-				width: 100%;
-				overflow: hidden;
-				background-color: #deb887;
-			}
-
-			#portfolio > h1 {
-				color: #282828;
-				margin: 0;
+				position: relative;
+				top: 35%;
+				transform: translateY(-35%);
+				-ms-transform: translateY(-35%);
+				-webkit-transform: translateY(-35%);
+				-moz-transform: translateY(-35%);
+				-o-transform: translateY(-35%);
 				margin-left: 3%;
-				margin-top: 3%;
-				margin-bottom: 1%;
+			}
+
+			#portfolio-entries {
+				margin: 0;
+				width: 100%;
+				height: 90%;
+				background-color: #deb887;
+				text-align: left;
+				position: relative;
+			}
+
+			#portfolio-entries > h1 {
+				margin: 0;
+				color: #282828;
 				font-size: 4vw;
 				font-family: 'Source Sans Pro', sans-serif;
+				margin-left: 3%;
 				text-decoration: underline;
 				cursor: pointer;
+				position: relative;
+				top: 10%;
+				transform: translateY(-10%);
+				-ms-transform: translateY(-10%);
+				-webkit-transform: translateY(-10%);
+				-moz-transform: translateY(-10%);
+				-o-transform: translateY(-10%);
 			}
 
-			.last-entry {
-				padding-bottom: 4%;
-			}
-
-			#portfolio > p {
-				color: #282828;
+			#portfolio-entries > p {
 				margin: 0;
-				margin-left: 3%;
+				color: #282828;
 				font-size: 1.5vw;
 				font-family: 'Open Sans', sans-serif;
-			}
-
-			#contact {
-				width: 100%;
-				background-color: #282828;
-				overflow: hidden;
-			}
-
-			#contact > h1 {
-				color: white;
 				margin-left: 3%;
-				margin-top: 3%;
-				margin-bottom: 4%;
-				font-size: 5vw;
-				font-family: 'Source Sans Pro', sans-serif;
-			}
-
-			#contact > p {
-				color: white;
-				margin-left: 3%;
-				margin-bottom: 4%;
-				font-size: 1.5vw;
-				font-family: 'Open Sans', sans-serif;
+				position: relative;
+				top: 12.5%;
+				transform: translateY(-12.5%);
+				-ms-transform: translateY(-12.5%);
+				-webkit-transform: translateY(-12.5%);
+				-moz-transform: translateY(-12.5%);
+				-o-transform: translateY(-12.5%);
+				margin-bottom: 3%;
 			}
 
 			a {
 				color: #282828;
 			}
 
-			@media all and (max-width: 800px) {
-				#name-container, #portfolio-intro > h1, #contact > h1 {
+			#contact {
+				width: 100%;
+				height: 30%;
+				margin: 0;
+				background-color: #282828;
+				text-align: left;
+				position: relative;
+			}
+
+			#contact-heading {
+				margin: 0;
+				margin-left: 3%;
+				color: white;
+				font-size: 5vw;
+				font-family: 'Source Sans Pro', sans-serif;
+				position: relative;
+				top: 10%;
+				transform: translateY(-10%);
+				-ms-transform: translateY(-10%);
+				-webkit-transform: translateY(-10%);
+				-moz-transform: translateY(-10%);
+				-o-transform: translateY(-10%);
+			}
+
+			#contact-description {
+				margin: 0;
+				margin-left: 3%;
+				color: white;
+				font-size: 1.5vw;
+				font-family: 'Open Sans', sans-serif;
+				position: relative;
+				top: 30%;
+				transform: translateY(-30%);
+				-ms-transform: translateY(-30%);
+				-webkit-transform: translateY(-30%);
+				-moz-transform: translateY(-30%);
+				-o-transform: translateY(-30%);
+			}
+
+			@media all and (max-width: 650px) {
+				#name, #portfolio-heading, #contact-heading {
 					font-size: 8vw;
 				}
 
-				#portfolio > h1 {
-					font-size: 7vw;
-				}
-
-				#greeting, #portfolio-intro > p, #portfolio > p, #contact > p {
-					font-size: 2.75vw;
+				#greeting, #portfolio-description {
+					font-size: 2.5vw;
 				}
 
 				#work-scroll-button {
 					font-size: 4vw;
 				}
-			}
 
-			@media all and (max-width: 600px) {
-				#name-container, #portfolio-intro > h1, #contact > h1 {
-					font-size: 9vw;
+				#portfolio-entries > h1 {
+					font-size: 7vw;
 				}
 
-				#portfolio > h1 {
-					font-size: 8vw;
+				#portfolio-entries > p {
+					font-size: 3vw;
 				}
 
-				#greeting, #portfolio-intro > p, #portfolio > p, #contact > p {
-					font-size: 3.75vw;
+				#portfolio > p {
+					font-size: 3vw;
 				}
 
-				#work-scroll-button {
-					font-size: 5vw;
+				#contact > p {
+					font-size: 3vw;
 				}
 			}
 		</style>
@@ -337,25 +399,27 @@
 		<div id="img-container">
 			<h1 id="name-container"><span id="name"></span><span id="cursor">&nbsp;&nbsp;&nbsp;</span></h1>
 			<p id="greeting">Hello! I am a front-end web developer specialized in assembling and maintaining elegant, interactive, and aesthetically pleasing websites.</p>
-			<h1 id="work-scroll-button" onclick="scrollDown();">VIEW MY WORK</h1>
+			<button id="work-scroll-button" onclick="scrollDown();">VIEW MY WORK</button>
 		</div>
+
 		<div id="portfolio-intro">
-			<h1>PORTFOLIO.</h1>
-			<p>These are some example webpages I have created. When making a webpage, I make sure it is both practical and beautiful, never sacrificing one for the other.</p>
+			<h1 id="portfolio-heading">PORTFOLIO.</h1>
+			<p id="portfolio-description">These are some example webpages that I have created. When making a page, I make sure it is both practical and beautiful, never sacrificing one for the other.</p>
 		</div>
-		<div id="portfolio">
-			<h1><a href="cafe.html">PLENTY PIE CAFE.</a></h1>
-			<p>This is the landing page for a fictional coffee shop: Plenty Pie Cafe. It invites the user to view the shop's lunch menu and displays pictures of the delicious pies it offers.</p>
+		<div id="portfolio-entries">
+			<h1 id="plenty-pie-heading"><a href="cafe.html">PLENTY PIE CAFE.</a></h1>
+			<p id="plenty-pie-description">This is the landing page for a fictional coffee shop: Plenty Pie Cafe. It invites the user to view the shop's lunch menu and displays pictures of the delicious pies it offers.</p>
 
-			<h1><a href="SolarSystemQuiz.html">SOLAR SYSTEM QUIZ.</a></h1>
-			<p>This is an interactive quiz that tests the user's knowledge of the solar system and its planets. It contains eight questions, with each one asking about a fun fact regarding either the sun or a planet.</p>
+			<h1 id="solar-quiz-heading"><a href="SolarSystemQuiz.html">SOLAR SYSTEM QUIZ.</a></h1>
+			<p id="solar-quiz-description">This is an interactive quiz that tests the user's knowledge of the solar system and its planets. It contains eight questions, with each one asking about a fun fact regarding either the sun or a planet.</p>
 
-			<h1><a href="TicTacToe.html">TIC TAC TOE.</a></h1>
-			<p class="last-entry">This page features one of the most timeless games: Tic Tac Toe. Once the game is over, the user is given the option to clear the board and start over.</p>
+			<h1 id="tic-tac-toe-heading"><a href="TicTacToe.html">TIC TAC TOE.</a></h1>
+			<p id="tic-tac-toe-description">This page features one of the most timeless games: Tic Tac Toe. Once the game is over, the user is given the option to clear the board and start over.</p>
 		</div>
+
 		<div id="contact">
-			<h1>CONTACT.</h1>
-			<p>If you need to contact me, I am available at yasabd639@gmail.com. Don't hesitate to reach out!</p>
-		</div>
+			<h1 id="contact-heading">CONTACT.</h1>
+			<p id="contact-description">If you need to contact me, I am available at yasabd639@gmail.com. Don't hesitate to reach out!</p>
+		</div>		
 	</body>
 </html>
